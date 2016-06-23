@@ -22,9 +22,6 @@ public class DialogoHistorial extends DialogFragment {
 
         SharedPreferences historial= getActivity().getSharedPreferences("HistorialRss", Context.MODE_PRIVATE);
 
-        SharedPreferences.Editor editor= historial.edit();
-        editor.remove("");
-
         ArrayList<String> enlaces= new ArrayList<String>();
         for(int j=0; j<5; j++)
         {
@@ -33,8 +30,6 @@ public class DialogoHistorial extends DialogFragment {
                 enlaces.add(historial.getString("key_"+j, null));
             }
         }
-
-        editor.commit();
 
         int cant= enlaces.size();
         String[]items= new String[cant];

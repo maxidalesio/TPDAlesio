@@ -33,10 +33,8 @@ public class MainActivity extends AppCompatActivity implements ClickItem, Handle
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**Shared Preference para recordar enlaces**/
         historial= getSharedPreferences("HistorialRss", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor= historial.edit();
-        editor.remove("");
-        editor.commit();
 
         /**Handler y Pool de Hilos**/
         colaMensajes= new Handler(this);
@@ -103,40 +101,38 @@ public class MainActivity extends AppCompatActivity implements ClickItem, Handle
         return super.onOptionsItemSelected(item);
     }
 
-    public void manejarHistorial (String url){
-        historial= getSharedPreferences("HistorialRss", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor= historial.edit();
-        ArrayList<String> lista = new ArrayList<String>();
-        boolean yaExiste = false;
-        for(int i=0; i<5; i++)
-        {
-            String datoStr = historial.getString("key_"+i, "nada");
-            if(!datoStr.equals("nada")) {
-                lista.add(historial.getString("key_"+i, null));
-            }
-        }
-        for (String s:lista){
-            if (s.equals(url))
-                yaExiste=true;
-        }
-        if (!yaExiste){
-            editor.clear();
-            editor.putString("key_0", url);
-            Log.d("Historial"+0, url);
-            for (int i= 0; i<4; i++)
-            {
-                Log.d("Index", String.valueOf(i));
-                if (lista.size()!=0)
-                {
-                    int key = i+1;
-                    editor.putString("key_"+key, lista.get(0));
-                    Log.d("Historial"+key, lista.get(0));
-                    lista.remove(0);
+    public void manejarHistorial (String url) {
+        if (url.startsWith("http://")) {
+            historial = getSharedPreferences("HistorialRss", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = historial.edit();
+            ArrayList<String> lista = new ArrayList<String>();
+            boolean yaExiste = false;
+            for (int i = 0; i < 5; i++) {
+                String datoStr = historial.getString("key_" + i, "nada");
+                if (!datoStr.equals("nada")) {
+                    lista.add(historial.getString("key_" + i, null));
                 }
             }
+            for (String s : lista) {
+                if (s.equals(url))
+                    yaExiste = true;
+            }
+            if (!yaExiste) {
+                editor.clear();
+                editor.putString("key_0", url);
+                //Log.d("Historial"+0, url);
+                for (int i = 0; i < 4; i++) {
+                    Log.d("Index", String.valueOf(i));
+                    if (lista.size() != 0) {
+                        int key = i + 1;
+                        editor.putString("key_" + key, lista.get(0));
+                        //Log.d("Historial"+key, lista.get(0));
+                        lista.remove(0);
+                    }
+                }
 
+            }
+            editor.commit();
         }
-
-        editor.commit();
     }
 }
