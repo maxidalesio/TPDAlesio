@@ -1,16 +1,10 @@
 package com.example.alumno.tpdalesio;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
 public class ListenerMyActivity implements View.OnClickListener {

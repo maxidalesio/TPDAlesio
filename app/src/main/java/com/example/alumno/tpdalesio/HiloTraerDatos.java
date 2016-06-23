@@ -5,9 +5,7 @@ import android.os.Message;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Xml;
-
 import org.xmlpull.v1.XmlPullParser;
-
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;

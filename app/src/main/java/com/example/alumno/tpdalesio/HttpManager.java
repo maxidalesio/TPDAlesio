@@ -2,7 +2,6 @@ package com.example.alumno.tpdalesio;
 
 import android.net.Uri;
 import android.util.Log;
-
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

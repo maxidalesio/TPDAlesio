@@ -1,15 +1,10 @@
 package com.example.alumno.tpdalesio;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.util.Log;
-
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 
 public class ListenerHistorial implements DialogInterface.OnClickListener {
 

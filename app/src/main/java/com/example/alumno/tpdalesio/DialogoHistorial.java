@@ -1,18 +1,13 @@
 package com.example.alumno.tpdalesio;
 
-/**
- * Created by Maxi on 23/6/2016.
- */
+
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 
 
 public class DialogoHistorial extends DialogFragment {
