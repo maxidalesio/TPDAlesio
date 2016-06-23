@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements ClickItem, Handle
                 miAdapter.notifyDataSetChanged();
                 break;
             case 2:
+                Log.d("Noticia", String.valueOf(msg.obj));
                 byte[] imagen= (byte[])msg.obj;
                 int posicion= msg.arg2;
                 Noticia n= noticias.get(posicion);

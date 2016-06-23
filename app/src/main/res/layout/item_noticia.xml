@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-    <ImageView
-        android:id="@+id/imgvNoticia"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:layout_weight="0.4"
-        android:src="@drawable/rss_logo"
-        android:layout_gravity="center"/>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imgvNoticia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/rss_logo"
+            android:maxHeight="250dp"
+            android:maxWidth="250dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="0.4"
+            android:adjustViewBounds="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:layout_weight="0.6">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,6 +41,6 @@
                 android:text="Descripción"
                 android:textAppearance="?android:textAppearanceMedium"/>
         </LinearLayout>
-    </LinearLayout>
+
 
 </LinearLayout>
