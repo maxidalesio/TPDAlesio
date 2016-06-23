@@ -1,6 +1,7 @@
 package com.example.alumno.tpdalesio;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -28,7 +29,9 @@ public class ListenerHistorial implements DialogInterface.OnClickListener {
         }
 
         String url="";
-        url= lista.get(which);
+        if (which != AlertDialog.BUTTON_NEUTRAL) {
+            url= lista.get(which);
+        }
 
         if (!url.equals("")) {
             Thread hiloDatos = new Thread(new HiloTraerDatos(url, MainActivity.colaMensajes, false));
