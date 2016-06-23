@@ -9,7 +9,7 @@ public class Noticia {
     private String fecha;
     private String link;
     private String imgPath;
-    private Byte[] imagen;
+    private byte[] imagen;
 
     public String getTitulo() {
         return titulo;
@@ -51,11 +51,11 @@ public class Noticia {
         this.imgPath = imgPath;
     }
 
-    public Byte[] getImagen() {
+    public byte[] getImagen() {
         return imagen;
     }
 
-    public void setImagen(Byte[] imagen) {
+    public void setImagen(byte[] imagen) {
         this.imagen = imagen;
     }
 }

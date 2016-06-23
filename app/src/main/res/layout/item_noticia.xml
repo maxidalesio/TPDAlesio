@@ -11,6 +11,8 @@
         android:id="@+id/imgvNoticia"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:layout_weight="0.4"
         android:src="@drawable/rss_logo"
         android:layout_gravity="center"/>
 
