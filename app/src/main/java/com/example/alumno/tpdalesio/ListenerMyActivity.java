@@ -1,10 +1,16 @@
 package com.example.alumno.tpdalesio;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
 public class ListenerMyActivity implements View.OnClickListener {
@@ -23,6 +29,10 @@ public class ListenerMyActivity implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId()== R.id.RSSButton){
             TextView tvRss= (TextView) act.findViewById(R.id.RSSLink);
+            Message mensaje = new Message();
+            mensaje.obj = tvRss.getText().toString();
+            mensaje.arg1 = 3;
+            colaMensajes.sendMessage(mensaje);
             hiloDatos= new Thread(new HiloTraerDatos(tvRss.getText().toString(), colaMensajes, false));
             executorService.execute(hiloDatos);
         }
