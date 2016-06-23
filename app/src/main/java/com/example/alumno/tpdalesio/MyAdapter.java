@@ -44,7 +44,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.tvDescripcion.setText(n.getDescripcion());
         holder.tvTitulo.setText(n.getTitulo());
         holder.tvFecha.setText(n.getFecha());
-        //TODO llamar al hilo para poder ver la imagen
         if (n.getImagen() != null){
             Bitmap bmp = BitmapFactory.decodeByteArray(n.getImagen(), 0, n.getImagen().length);
             holder.ivImagen.setImageBitmap(bmp);

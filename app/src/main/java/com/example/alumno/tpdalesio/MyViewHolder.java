@@ -30,9 +30,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        //Log.d("Posicion", String.valueOf(this.position));
         objClick.click(this.position);
-
     }
 
 }
