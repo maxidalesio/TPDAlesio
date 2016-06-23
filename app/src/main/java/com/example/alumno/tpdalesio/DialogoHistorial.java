@@ -31,6 +31,7 @@ public class DialogoHistorial extends DialogFragment {
         items= enlaces.toArray(items);
 
         ListenerHistorial listener= new ListenerHistorial(getActivity());
+        builder.setTitle("Historial de RSSs");
         builder.setItems(items, listener);
         builder.setNeutralButton("Cancelar", listener);
 
