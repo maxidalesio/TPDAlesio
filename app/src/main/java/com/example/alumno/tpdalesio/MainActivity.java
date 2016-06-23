@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements ClickItem, Handle
         if (!yaExiste){
             editor.clear();
             editor.putString("key_0", url);
-            Log.d("Historial", url);
+            Log.d("Historial"+0, url);
             for (int i= 0; i<4; i++)
             {
                 Log.d("Index", String.valueOf(i));
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements ClickItem, Handle
                 {
                     int key = i+1;
                     editor.putString("key_"+key, lista.get(0));
-                    Log.d("Historial", lista.get(0));
+                    Log.d("Historial"+key, lista.get(0));
                     lista.remove(0);
                 }
             }

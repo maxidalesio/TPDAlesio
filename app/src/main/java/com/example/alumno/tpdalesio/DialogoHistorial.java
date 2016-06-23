@@ -20,16 +20,21 @@ public class DialogoHistorial extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
 
-        SharedPreferences preferences= getActivity().getSharedPreferences("HistorialRss", Context.MODE_PRIVATE);
+        SharedPreferences historial= getActivity().getSharedPreferences("HistorialRss", Context.MODE_PRIVATE);
 
-        SharedPreferences.Editor editor= preferences.edit();
+        SharedPreferences.Editor editor= historial.edit();
         editor.remove("");
-        editor.commit();
-        Map preferencias= preferences.getAll();
+
         ArrayList<String> enlaces= new ArrayList<String>();
-        for (Iterator it = preferencias.values().iterator(); it.hasNext();){
-            enlaces.add((String) it.next());
+        for(int j=0; j<5; j++)
+        {
+            String datoStr = historial.getString("key_"+j, "nada");
+            if(!datoStr.equals("nada")) {
+                enlaces.add(historial.getString("key_"+j, null));
+            }
         }
+
+        editor.commit();
 
         int cant= enlaces.size();
         String[]items= new String[cant];
